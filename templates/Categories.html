@@ -1,0 +1,24 @@
+
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<html>
+
+<center><h1>Welcome to Catalog</h1></center>
+
+<a href='{{url_for("new_category") }}'> add new Category</a>
+
+	{% for cat in category %}
+
+    <br>
+
+  			<a href='{{url_for("showCategory",category_name= cat.name) }}'> <h3>{{cat.name}}</h3> </a>
+
+
+	{% endfor %}
+
+</html>
+
+
+
+{% endblock %}

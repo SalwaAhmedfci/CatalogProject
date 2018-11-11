@@ -1,0 +1,16 @@
+<html>
+<head>
+
+</head>
+<body>
+<h1> Are you sure you want to delete {{item.name}} Item?</h1>
+
+<a href = "{{ url_for('delete_item',category_name=category.name ,item_name=item.name)}}"> Delete </a>
+
+
+
+
+<a href = "{{ url_for('show_item',category_name=category.name ,item_name=item.name)}}"> Cancel </a>
+</body>
+
+</html>
