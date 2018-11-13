@@ -6,8 +6,11 @@
 
 <center><h1>Welcome to Catalog</h1></center>
 
-<a href='{{url_for("new_category") }}'> add new Category</a>
+<div class="row">
 
+
+      <div class="col-sm-6">
+              <h2>Categories</h2>
 	{% for cat in category %}
 
     <br>
@@ -17,6 +20,28 @@
 
 	{% endfor %}
 
+    </div>
+
+
+
+
+    <div class="col-sm-6" >
+      <p>
+     <h2>latest Items</h2>
+        <br>
+       {% for item in items:%}
+
+
+
+  <h4>  {{item.name + " ( " + item.category.name + " ) "}}</h4>
+        <br>
+
+
+        {%endfor%}
+
+        </p>
+    </div>
+</div>
 </html>
 
 
