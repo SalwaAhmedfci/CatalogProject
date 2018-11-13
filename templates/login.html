@@ -1,3 +1,6 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
 <head>
 
   <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
@@ -129,3 +132,4 @@ function signInCallback(authResult) {
   </body>
 
 </html>
+{%endblock%}

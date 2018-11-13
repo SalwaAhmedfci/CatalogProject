@@ -3,13 +3,14 @@
 <body>
 
 <center><h1>{{Category.name}}</h1></center>
-{% if 'username' in session and creator.id == session['user_id'] %}
+
+{% if 'username' in session %}
 <a href='{{url_for("new_items",category_name= Category.name) }}'> add Item</a>
-<a href='{{url_for("new_category") }}'> add new Category</a>
-
-{% endif %}
 
 
+
+
+{%endif%}
 
 
 
@@ -32,6 +33,7 @@
 
 
 {% endfor %}
+<a href='{{url_for("new_category") }}'> add new Category</a>
 </body>
 
 </html>

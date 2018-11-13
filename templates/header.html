@@ -1,19 +1,22 @@
-<div class="row top-menu">
+<div class="container">
+<div class="row top-menu" id="toprow" >
 	<div class="col-md-6">
-		<a href="{{url_for('show_categories')}}">
-			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>Show All Categories
-		</a>
+
+			<button class="btn" href="{{url_for('show_categories')}}"><i class="fa fa-home"></i> Home</button>
+
 	</div>
 	<div class="col-md-6 text-right">
 		{%if 'username' not in session %}
-					<p><a href="{{url_for('login')}}">
-			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>Login in
-		</a> </p>
+		<a class="btn btn-primary"  href="{{url_for('login')}}">
+  <i class="icon-refresh icon-spin"></i> Login</a>
+
+
 		{% else %}
-					<a href="{{url_for('logout')}}" class="user__nav">
+				<a class="btn btn-danger"  href="{{url_for('logout')}}">
 						Logout
-					</a>
+					<i class="icon-refresh icon-spin"></i></a>
 {% endif %}
 		
 	</div>
+</div>
 </div>
