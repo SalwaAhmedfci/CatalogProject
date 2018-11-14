@@ -10,6 +10,7 @@ from flask import jsonify
 
 Base = declarative_base()
 
+
 class User(Base):
     __tablename__ = 'user'
 
@@ -18,6 +19,7 @@ class User(Base):
     email = Column(String(250), nullable=False)
     picture = Column(String(250))
 
+
 class Category(Base):
     __tablename__ = "category"
 
@@ -25,6 +27,7 @@ class Category(Base):
     name = Column(String(250), nullable=False)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
+
     @property
     def serialize(self):
         """Return object data in easily serializeable format"""
@@ -45,6 +48,7 @@ class Items(Base):
     category = relationship(Category)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
+
     # serializable format
     @property
     def serialize(self):
@@ -58,8 +62,6 @@ class Items(Base):
             'category': self.category.name,
 
         }
-
-
 
 
 # configuration part
